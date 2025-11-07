@@ -1,80 +1,280 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
+html,
 body {
-  background: #000;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  font-family: "Poppins", sans-serif;
-  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #000;
+  color: #f5f5f5;
 }
 
-/* Fondo de videos */
+/* ========== FONDO: GRID DE VIDEOS ========== */
+
 .video-grid {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-auto-rows: 200px;
+  gap: 4px;
   z-index: 0;
+  filter: brightness(0.55);
 }
 
-.video-grid video {
+.video-cell {
+  position: relative;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  filter: brightness(0.5) contrast(1.1);
+  overflow: hidden;
 }
 
-/* Capa de texto y logo */
-.overlay {
+.video-cell iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  pointer-events: none; /* que no estorben para hacer click en la web */
+}
+
+/* Capa oscura para que se lea el texto */
+.video-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.12),
+    rgba(0, 0, 0, 0.92)
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ========== CONTENIDO PRINCIPAL ========== */
+
+.content {
+  position: relative;
+  z-index: 2;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.hero-card {
+  max-width: 980px;
+  width: 100%;
+  padding: 32px 28px 26px;
+  border-radius: 24px;
+  backdrop-filter: blur(14px);
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+
+/* BRAND */
+
+.brand {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  z-index: 2;
+  gap: 12px;
 }
 
-.logo {
-  width: 120px;
-  margin-bottom: 15px;
+.brand-logo {
+  width: 190px;
+  max-width: 55vw;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.7));
 }
 
-.title {
-  font-size: 3rem;
-  color: #ff7b00; /* Naranja RockinRender */
-  letter-spacing: 4px;
-  text-shadow: 0 0 20px #ff7b00;
+.brand-name {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #ffa73a;
+  text-shadow: 0 0 14px rgba(255, 168, 58, 0.9);
 }
 
 .subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
+  margin-top: 8px;
+  font-size: 16px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   opacity: 0.85;
 }
 
-/* Menú */
-.menu a {
-  color: white;
-  text-decoration: none;
-  margin: 0 10px;
-  font-weight: 500;
-  transition: 0.3s;
+/* NAV */
+
+.nav {
+  margin-top: 26px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  font-size: 14px;
 }
 
-.menu a:hover {
-  color: #ff7b00;
-  text-shadow: 0 0 10px #ff7b00;
+.nav a {
+  color: #f5f5f5;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 3px;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, #f6d68a, #f0b46a);
+  transition: width 0.18s ease-out;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.headline {
+  margin-top: 28px;
+  font-size: 24px;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.headline strong {
+  color: #f6d68a;
+}
+
+.text {
+  margin-top: 14px;
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.86;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-row {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.btn-primary,
+.btn-ghost {
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(120deg, #f6d68a, #f0b46a);
+  color: #181818;
+  font-weight: 600;
+  border-color: rgba(0, 0, 0, 0.4);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: rgba(245, 245, 245, 0.35);
+  color: #f5f5f5;
+}
+
+.btn-primary .icon,
+.btn-ghost .icon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.meta {
+  margin-top: 18px;
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.meta strong {
+  opacity: 1;
+}
+
+/* BOTÓN FLOTANTE WHATSAPP */
+
+.whatsapp-fab {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  z-index: 3;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 26px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .hero-card {
+    padding: 22px 16px 20px;
+    border-radius: 18px;
+  }
+
+  .brand-name {
+    font-size: 26px;
+    letter-spacing: 0.16em;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+  }
+
+  .headline {
+    font-size: 19px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+
+  .nav {
+    gap: 16px;
+    font-size: 13px;
+  }
+
+  .whatsapp-fab {
+    width: 46px;
+    height: 46px;
+    font-size: 22px;
+  }
 }

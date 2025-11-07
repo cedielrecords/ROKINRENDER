@@ -2,28 +2,82 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <title>RokinRender – Visualización arquitectónica profesional</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RockinRender | Villas</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+  <!-- GRID DE VIDEOS DE YOUTUBE -->
   <div class="video-grid" id="videoGrid"></div>
+  <div class="video-overlay"></div>
 
-  <div class="overlay">
-    <img src="img/logo.png" alt="RockinRender Logo" class="logo" />
-    <h1 class="title">ROKIN RENDER</h1>
-    <p class="subtitle">Visualización arquitectónica profesional</p>
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="content">
+    <section class="hero-card">
+      <div class="brand">
+        <!-- LOGO HEXAGONAL (pon aquí tu PNG) -->
+        <img
+          src="rokinrender-logo.png"
+          alt="RokinRender Logo"
+          class="brand-logo"
+        />
+        <div class="brand-name">ROKIN RENDER</div>
+      </div>
 
-    <nav class="menu">
-      <a href="#portafolio">Portafolio</a>
-      <a href="#trabajos">Trabajos previos</a>
-      <a href="#cotizar">Cotizar</a>
-      <a href="#acerca">Acerca de</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </div>
+      <div class="subtitle">
+        VISUALIZACIÓN ARQUITECTÓNICA PROFESIONAL
+      </div>
+
+      <!-- NAV -->
+      <nav class="nav">
+        <a href="#portfolio">Portafolio</a>
+        <a href="#trabajos">Trabajos previos</a>
+        <a href="#cotizar">Cotizar</a>
+        <a href="#acerca">Acerca de</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <h1 class="headline">
+        Renders, animaciones y cinemáticas <strong>hiperrealistas</strong>
+        para proyectos de arquitectura y desarrollo inmobiliario.
+      </h1>
+
+      <p class="text">
+        Arquitecto y fotógrafo especializado en visualización: imágenes fijas,
+        recorridos de video y contenido vertical para redes. Flujo de trabajo
+        híbrido con motores de render e <strong>inteligencia artificial</strong>
+        para entregar piezas listas para vender tus proyectos.
+      </p>
+
+      <div class="cta-row">
+        <a href="https://wa.me/573003558180" class="btn-primary" target="_blank" rel="noopener">
+          <span class="icon">✦</span>
+          Hablar por WhatsApp
+        </a>
+        <a href="#portfolio" class="btn-ghost">
+          <span class="icon">▶</span>
+          Ver portafolio
+        </a>
+      </div>
+
+      <p class="meta">
+        Más información: <strong>+57 300 355 8180</strong> · Instagram: <strong>@rokinrender</strong>
+      </p>
+    </section>
+  </main>
+
+  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+  <a
+    href="https://wa.me/573003558180"
+    class="whatsapp-fab"
+    target="_blank"
+    rel="noopener"
+    aria-label="Hablar por WhatsApp"
+  >
+    ☏
+  </a>
 
   <script src="script.js"></script>
 </body>
 </html>
-

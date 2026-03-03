@@ -1,83 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>RokinRender – Visualización arquitectónica profesional</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RockinRender</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- GRID DE VIDEOS DE YOUTUBE -->
-  <div class="video-grid" id="videoGrid"></div>
-  <div class="video-overlay"></div>
+<div class="background-glow"></div>
 
-  <!-- CONTENIDO PRINCIPAL -->
-  <main class="content">
-    <section class="hero-card">
-      <div class="brand">
-        <!-- LOGO HEXAGONAL (pon aquí tu PNG) -->
-        <img
-          src="rokinrender-logo.png"
-          alt="RokinRender Logo"
-          class="brand-logo"
-        />
-        <div class="brand-name">ROKIN RENDER</div>
-      </div>
+<header>
+    <h1 class="logo">ROKINRENDER<span>.com</span></h1>
+</header>
 
-      <div class="subtitle">
-        VISUALIZACIÓN ARQUITECTÓNICA PROFESIONAL
-      </div>
+<nav class="tabs">
+    <button class="tab active" data-tab="motor1">Motor 1</button>
+    <button class="tab" data-tab="motor2">Motor 2</button>
+    <button class="tab" data-tab="motor3">Motor 3</button>
+    <button class="tab" data-tab="motor4">Motor 4</button>
+    <button class="tab" data-tab="motor5">Motor 5</button>
+</nav>
 
-      <!-- NAV -->
-      <nav class="nav">
-        <a href="#portfolio">Portafolio</a>
-        <a href="#trabajos">Trabajos previos</a>
-        <a href="#cotizar">Cotizar</a>
-        <a href="#acerca">Acerca de</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
+<section class="content">
 
-      <h1 class="headline">
-        Renders, animaciones y cinemáticas <strong>hiperrealistas</strong>
-        para proyectos de arquitectura y desarrollo inmobiliario.
-      </h1>
+    <div class="tab-content active" id="motor1">
+        <h2>Info Inmobiliaria Desbloqueable</h2>
+        <p>Visualiza propiedades. Desbloquea el contacto con créditos.</p>
+    </div>
 
-      <p class="text">
-        Arquitecto y fotógrafo especializado en visualización: imágenes fijas,
-        recorridos de video y contenido vertical para redes. Flujo de trabajo
-        híbrido con motores de render e <strong>inteligencia artificial</strong>
-        para entregar piezas listas para vender tus proyectos.
-      </p>
+    <div class="tab-content" id="motor2">
+        <h2>Marketplace Gremial</h2>
+        <p>Arquitectos, pintores, electricistas y más.</p>
+    </div>
 
-      <div class="cta-row">
-        <a href="https://wa.me/573003558180" class="btn-primary" target="_blank" rel="noopener">
-          <span class="icon">✦</span>
-          Hablar por WhatsApp
-        </a>
-        <a href="#portfolio" class="btn-ghost">
-          <span class="icon">▶</span>
-          Ver portafolio
-        </a>
-      </div>
+    <div class="tab-content" id="motor3">
+        <h2>Texturas & Downloads</h2>
+        <p>Modelos, renders, packs, recursos premium.</p>
+    </div>
 
-      <p class="meta">
-        Más información: <strong>+57 300 355 8180</strong> · Instagram: <strong>@rokinrender</strong>
-      </p>
-    </section>
-  </main>
+    <div class="tab-content" id="motor4">
+        <h2>Educación</h2>
+        <p>Cursos de render, IA, Photoshop y producción visual.</p>
+    </div>
 
-  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
-  <a
-    href="https://wa.me/573003558180"
-    class="whatsapp-fab"
-    target="_blank"
-    rel="noopener"
-    aria-label="Hablar por WhatsApp"
-  >
-    ☏
-  </a>
+    <div class="tab-content" id="motor5">
+        <h2>Renders Profesionales</h2>
+        <p>Servicio premium de visualización arquitectónica.</p>
+    </div>
 
-  <script src="script.js"></script>
+</section>
+
+<footer>
+    <button class="cta">Entrar a la Red</button>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

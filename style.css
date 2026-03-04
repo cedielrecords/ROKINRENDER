@@ -63,3 +63,25 @@ animation:glitch2 2s infinite;
 80%{transform:translate(-1px,1px)}
 100%{transform:translate(0)}
 }
+
+
+.kanji{
+position:fixed;
+font-size:120px;
+opacity:0.05;
+color:#ff2ea6;
+font-family:sans-serif;
+pointer-events:none;
+animation:float 18s infinite ease-in-out;
+}
+
+.k1{top:10%;left:5%;}
+.k2{top:30%;right:10%;}
+.k3{bottom:20%;left:20%;}
+.k4{bottom:10%;right:20%;}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-40px)}
+100%{transform:translateY(0)}
+}

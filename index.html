@@ -1,60 +1,85 @@
+
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>ROKINRENDER</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<style>
 
-<link rel="stylesheet" href="style.css">
+body{
+background:black;
+font-family:Arial, Helvetica, sans-serif;
+margin:0;
+padding:0;
+text-align:center;
+color:white;
+}
 
+/* TITULO NEON */
+
+h1{
+margin-top:60px;
+font-size:60px;
+color:#ff2bd6;
+text-shadow:
+0 0 5px #ff2bd6,
+0 0 10px #ff2bd6,
+0 0 20px #ff2bd6,
+0 0 40px #ff2bd6;
+letter-spacing:4px;
+}
+
+/* CONTENEDOR */
+
+.container{
+margin-top:80px;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:35px;
+}
+
+/* CAJONES */
+
+.box{
+background:#ff2bd6;
+color:black;
+padding:22px 40px;
+width:300px;
+border-radius:12px;
+font-weight:bold;
+font-size:18px;
+transition:0.25s;
+}
+
+.box:hover{
+transform:scale(1.05);
+box-shadow:0 0 25px #ff2bd6;
+}
+
+</style>
 </head>
 
 <body>
 
-<canvas id="matrix"></canvas>
-
-<h1 class="glitch" data-text="ROKINRENDER">ROKINRENDER</h1>
+<h1>ROKINRENDER</h1>
 
 <div class="container">
 
-<div class="card">
-<h2>INFO INMOBILIARIA</h2>
-<p>Visualiza propiedades y desbloquea contactos premium.</p>
-</div>
+<div class="box">INFO INMOBILIARIA</div>
 
-<div class="card">
-<h2>MARKETPLACE GREMIAL</h2>
-<p>Arquitectos, electricistas, pintores y más.</p>
-</div>
+<div class="box">MARKETPLACE GREMIAL</div>
 
-<div class="card">
-<h2>TEXTURAS & DOWNLOADS</h2>
-<p>Modelos, renders y recursos premium.</p>
-</div>
+<div class="box">TEXTURAS & DOWNLOADS</div>
 
-<div class="card">
-<h2>EDUCACIÓN</h2>
-<p>Cursos de render, IA y producción visual.</p>
-</div>
+<div class="box">EDUCACIÓN</div>
 
-<div class="card">
-<h2>RENDERS PROFESIONALES</h2>
-<p>Visualización arquitectónica de alto nivel.</p>
-</div>
+<div class="box">RENDERS PROFESIONALES</div>
 
 </div>
-
-<div class="footer">
-© 2026 ROKINRENDER
-</div>
-
-<script src="script.js"></script>
 
 </body>
-
 </html>

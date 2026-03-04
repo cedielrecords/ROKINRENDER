@@ -59,3 +59,25 @@ youtubeVideos.forEach((url) => {
   cell.appendChild(iframe);
   videoGrid.appendChild(cell);
 });
+
+
+setInterval(()=>{
+
+const cards=document.querySelectorAll(".card")
+
+cards.forEach(card=>{
+
+if(Math.random()<0.15){
+
+card.style.opacity="0.6"
+
+setTimeout(()=>{
+card.style.opacity="1"
+},120)
+
+}
+
+})
+
+},1500)
+

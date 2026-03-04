@@ -1,104 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>ROKINRENDER</title>
 
-<!-- Google Font Futurista -->
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 
-<style>
+<link rel="stylesheet" href="style.css">
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+</head>
 
-body{
-background:#000;
-color:#ff2ea6;
-font-family:'Orbitron', sans-serif;
-display:flex;
-flex-direction:column;
-align-items:center;
-padding:40px 20px;
-
+<body>
 
 <canvas id="matrix"></canvas>
+
 <div class="kanji k1">未来</div>
 <div class="kanji k2">都市</div>
 <div class="kanji k3">光</div>
 <div class="kanji k4">速度</div>
 
-
-}
-
-
-
-/* Logo Principal */<h1 class="glitch" data-text="ROKINRENDER">ROKINRENDER</h1>
-h1{
-font-size:42px;
-letter-spacing:4px;
-margin-bottom:40px;
-text-shadow:
-0 0 5px #ff2ea6,
-0 0 15px #ff2ea6,
-0 0 30px #ff2ea6;
-}
-
-/* Contenedor */
-.container{
-width:100%;
-max-width:500px;
-display:flex;
-flex-direction:column;
-gap:25px;
-}
-
-/* Botones Título */
-.card{
-background:linear-gradient(145deg,#ff2ea6,#c4007a);
-padding:25px;
-border-radius:15px;
-cursor:pointer;
-transition:0.3s;
-box-shadow:
-6px 6px 15px #000,
--2px -2px 10px #ff4fc4;
-}
-
-.card:hover{
-transform:translateY(-5px);
-box-shadow:
-0 0 15px #ff2ea6,
-0 0 40px #ff2ea6;
-}
-
-.card h2{
-font-size:20px;
-color:white;
-letter-spacing:2px;
-}
-
-.card p{
-font-size:13px;
-color:#ffe3f5;
-margin-top:10px;
-}
-
-.footer{
-margin-top:50px;
-font-size:12px;
-opacity:0.4;
-}
-
-</style>
-</head>
-<body>
-
-<h1>ROKINRENDER</h1>
+<h1 class="glitch" data-text="ROKINRENDER">ROKINRENDER</h1>
 
 <div class="container">
 
@@ -133,5 +58,8 @@ opacity:0.4;
 © 2026 ROKINRENDER
 </div>
 
+<script src="script.js"></script>
+
 </body>
+
 </html>

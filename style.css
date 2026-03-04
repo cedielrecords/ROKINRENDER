@@ -12,3 +12,47 @@ tabs.forEach(tab => {
 
     });
 });
+
+.glitch{
+position:relative;
+animation:glitch 2s infinite;
+}
+
+.glitch::before,
+.glitch::after{
+content:attr(data-text);
+position:absolute;
+left:0;
+top:0;
+width:100%;
+}
+
+.glitch::before{
+color:#00ffff;
+z-index:-1;
+animation:glitch1 2s infinite;
+}
+
+.glitch::after{
+color:#ff00ff;
+z-index:-2;
+animation:glitch2 2s infinite;
+}
+
+@keyframes glitch1{
+0%{transform:translate(2px,0)}
+20%{transform:translate(-2px,0)}
+40%{transform:translate(2px,2px)}
+60%{transform:translate(-2px,-2px)}
+80%{transform:translate(1px,-1px)}
+100%{transform:translate(0)}
+}
+
+@keyframes glitch2{
+0%{transform:translate(-2px,0)}
+20%{transform:translate(2px,0)}
+40%{transform:translate(-2px,-2px)}
+60%{transform:translate(2px,2px)}
+80%{transform:translate(-1px,1px)}
+100%{transform:translate(0)}
+}

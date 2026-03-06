@@ -45,3 +45,4 @@ drops[i] = 0;
 }
 
 setInterval(draw, 40);
+

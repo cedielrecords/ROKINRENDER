@@ -18,20 +18,47 @@ color:white;
 overflow-x:hidden;
 }
 
-/* TITULO NEON */
+/* TITULO NEON + GLITCH */
 
 h1{
 margin-top:60px;
 font-size:12vw;
-max-font-size:60px;
 color:#ff2bd6;
+letter-spacing:4px;
+white-space:nowrap;
+
 text-shadow:
 0 0 5px #ff2bd6,
 0 0 10px #ff2bd6,
 0 0 20px #ff2bd6,
 0 0 40px #ff2bd6;
-letter-spacing:4px;
-white-space:nowrap;
+
+animation:glitch 4s infinite;
+}
+
+@keyframes glitch{
+
+0%{transform:translate(0)}
+2%{transform:translate(-2px,2px)}
+4%{transform:translate(2px,-2px)}
+6%{transform:translate(-2px,1px)}
+8%{transform:translate(0)}
+
+20%{transform:translate(0)}
+
+21%{transform:skewX(8deg)}
+22%{transform:skewX(-8deg)}
+
+23%{transform:translate(0)}
+
+60%{transform:translate(0)}
+
+61%{transform:translate(3px,-2px)}
+62%{transform:translate(-3px,2px)}
+
+63%{transform:translate(0)}
+
+100%{transform:translate(0)}
 }
 
 /* CONTENEDOR */
@@ -44,9 +71,10 @@ align-items:center;
 gap:35px;
 }
 
-/* CAJONES */
+/* BOTONES */
 
 .box{
+position:relative;
 background:#ff2bd6;
 color:black;
 padding:22px 40px;
@@ -54,12 +82,61 @@ width:300px;
 border-radius:12px;
 font-weight:bold;
 font-size:18px;
-transition:0.25s;
+z-index:1;
 }
 
-.box:hover{
-transform:scale(1.05);
-box-shadow:0 0 25px #ff2bd6;
+/* HALO GIRANDO */
+
+.box::before{
+content:"";
+position:absolute;
+inset:-4px;
+border-radius:16px;
+
+background:conic-gradient(
+white,
+transparent,
+white,
+transparent,
+white
+);
+
+animation:spin 6s linear infinite;
+
+filter:blur(6px);
+opacity:0.9;
+z-index:-1;
+}
+
+/* RESPIRACION DE LUZ */
+
+.box::after{
+content:"";
+position:absolute;
+inset:-8px;
+border-radius:18px;
+
+background:white;
+filter:blur(20px);
+
+opacity:0.2;
+
+animation:breathe 3s ease-in-out infinite;
+
+z-index:-2;
+}
+
+/* ANIMACIONES */
+
+@keyframes spin{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+
+@keyframes breathe{
+0%{opacity:0.1; transform:scale(0.98);}
+50%{opacity:0.35; transform:scale(1.02);}
+100%{opacity:0.1; transform:scale(0.98);}
 }
 
 </style>

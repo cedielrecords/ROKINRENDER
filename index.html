@@ -71,60 +71,70 @@ align-items:center;
 gap:35px;
 }
 
-/* BOTONES */
-
 .box{
 position:relative;
 background:#ff2bd6;
 color:black;
 padding:22px 40px;
 width:300px;
-border-radius:12px;
+border-radius:14px;
 font-weight:bold;
 font-size:18px;
 z-index:1;
 }
 
-/* HALO GIRANDO */
+/* HALO DELGADO GIRANDO */
 
 .box::before{
 content:"";
 position:absolute;
-inset:-4px;
+top:-2px;
+left:-2px;
+right:-2px;
+bottom:-2px;
+
 border-radius:16px;
 
 background:conic-gradient(
-white,
 transparent,
 white,
 transparent,
-white
+white,
+transparent
 );
 
-animation:spin 6s linear infinite;
+animation:spin 4s linear infinite;
 
-filter:blur(6px);
+filter:blur(2px);
 opacity:0.9;
+
 z-index:-1;
 }
 
-/* RESPIRACION DE LUZ */
+/* RESPIRACION SUAVE */
 
 .box::after{
 content:"";
 position:absolute;
-inset:-8px;
-border-radius:18px;
+top:-3px;
+left:-3px;
+right:-3px;
+bottom:-3px;
+
+border-radius:17px;
 
 background:white;
-filter:blur(20px);
 
-opacity:0.2;
+filter:blur(10px);
+opacity:0.15;
 
 animation:breathe 3s ease-in-out infinite;
 
 z-index:-2;
 }
+
+
+
 
 /* ANIMACIONES */
 

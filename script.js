@@ -7,6 +7,8 @@ let drops = [];
 
 const letters = "未来都市建築設計速度光空間";
 
+/* CONFIGURACIÓN */
+
 function setup(){
 
 canvas.width = window.innerWidth;
@@ -17,14 +19,18 @@ columns = Math.floor(canvas.width / fontSize);
 drops = [];
 
 for(let i = 0; i < columns; i++){
-drops[i] = Math.random() * canvas.height;
+drops[i] = Math.random() * -canvas.height;
 }
 
 }
+
+/* REAJUSTE RESPONSIVO */
 
 window.addEventListener("resize", setup);
 
 setup();
+
+/* DIBUJO */
 
 function draw(){
 
@@ -42,8 +48,10 @@ ctx.fillText(text, i * fontSize, drops[i]);
 
 drops[i] += fontSize;
 
+/* reinicio aleatorio */
+
 if(drops[i] > canvas.height && Math.random() > 0.975){
-drops[i] = 0;
+drops[i] = Math.random() * -100;
 }
 
 }
